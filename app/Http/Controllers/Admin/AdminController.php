@@ -10,21 +10,14 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
-namespace Tests\Unit;
+namespace App\Http\Controllers\Admin;
 
-use Tests\TestCase;
+use App\Http\Controllers\Controller;
 
-/**
- * @internal
- * @coversNothing
- */
-class ExampleTest extends TestCase
+class AdminController extends Controller
 {
-    /**
-     * A basic test example.
-     */
-    public function testBasicTest()
+    public function index()
     {
-        $this->assertTrue(true);
+        echo 'admin index';
     }
 }

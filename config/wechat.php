@@ -1,12 +1,13 @@
 <?php
 
-/*
- * This file is part of the overtrue/laravel-wechat.
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
  *
- * (c) overtrue <i@overtrue.me>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
+ * @link     https://www.hyperf.io
+ * @document https://doc.hyperf.io
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
 
 return [
@@ -70,10 +71,10 @@ return [
              * scopes：公众平台（snsapi_userinfo / snsapi_base），开放平台：snsapi_login
              * callback：OAuth授权完成后的回调页地址(如果使用中间件，则随便填写。。。)
              */
-             'oauth' => [
-                 'scopes'   => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),
-                 'callback' => env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_CALLBACK', '/examples/oauth_callback.php'),
-             ],
+            'oauth' => [
+                'scopes' => array_map('trim', explode(',', env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_SCOPES', 'snsapi_userinfo'))),
+                'callback' => env('WECHAT_OFFICIAL_ACCOUNT_OAUTH_CALLBACK', '/examples/oauth_callback.php'),
+            ],
         ],
     ],
 

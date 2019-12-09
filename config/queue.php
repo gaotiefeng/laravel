@@ -1,7 +1,16 @@
 <?php
 
-return [
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://doc.hyperf.io
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Default Queue Connection Name
@@ -29,7 +38,6 @@ return [
     */
 
     'connections' => [
-
         'sync' => [
             'driver' => 'sync',
         ],
@@ -65,7 +73,6 @@ return [
             'retry_after' => 90,
             'block_for' => null,
         ],
-
     ],
 
     /*
@@ -84,5 +91,4 @@ return [
         'database' => env('DB_CONNECTION', 'mysql'),
         'table' => 'failed_jobs',
     ],
-
 ];

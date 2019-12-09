@@ -1,7 +1,16 @@
 <?php
 
-return [
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://doc.hyperf.io
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 
+return [
     /*
     |--------------------------------------------------------------------------
     | Password Reset Language Lines
@@ -18,5 +27,4 @@ return [
     'token' => 'This password reset token is invalid.',
     'user' => "We can't find a user with that e-mail address.",
     'throttled' => 'Please wait before retrying.',
-
 ];

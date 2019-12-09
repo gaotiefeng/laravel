@@ -1,15 +1,14 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Broadcast Channels
-|--------------------------------------------------------------------------
-|
-| Here you may register all of the event broadcasting channels that your
-| application supports. The given channel authorization callbacks are
-| used to check if an authenticated user can listen to the channel.
-|
-*/
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://doc.hyperf.io
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 
 Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;

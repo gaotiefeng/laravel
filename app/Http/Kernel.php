@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://doc.hyperf.io
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -41,7 +51,6 @@ class Kernel extends HttpKernel
             'throttle:60,1',
             'bindings',
         ],
-
     ];
 
     /**
@@ -63,7 +72,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'wechat.oauth' => \Overtrue\LaravelWeChat\Middleware\OAuthAuthenticate::class,
-
     ];
 
     /**
