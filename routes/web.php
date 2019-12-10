@@ -13,10 +13,13 @@ declare(strict_types=1);
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/user', 'UserController@index');
-Route::get('/login', 'UserController@login');
-Route::get('/home', 'UserController@home');
-Route::get('/register', 'UserController@register');
+
+Route::namespace('Api')->group(function () {
+    Route::get('/user/index', 'UserController@index');
+    Route::get('/user/login', 'UserController@login');
+    Route::get('/user/home', 'UserController@home');
+    Route::get('/user/register', 'UserController@register');
+});
 
 Route::namespace('Admin')->group(function () {
     Route::get('/admin/index', 'AdminController@index');

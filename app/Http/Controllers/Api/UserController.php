@@ -10,15 +10,20 @@ declare(strict_types=1);
  * with this source code in the file LICENSE.
  */
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
     public function index(Request $request)
     {
-        var_dump($request->getUri());
+        $data['code'] = 0;
+        $data['items'] = $request->all() ?? [];
+        $data['request'] = request()->all();
+
+        return response()->json($data);
     }
 
     public function register()
