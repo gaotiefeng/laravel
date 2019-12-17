@@ -27,12 +27,10 @@ class UserController extends Controller
 
     public function index(Request $request)
     {
-        $data['code'] = 0;
         $data['request'] = request()->all();
         $result = $this->dao->list();
-        $data['items'] = $result;
 
-        return response()->json($data);
+        return $this->success($result,'查询成功');
     }
 
     public function register()
@@ -42,7 +40,7 @@ class UserController extends Controller
 
         $result = $this->dao->save($input);
 
-        return response()->json($result);
+        return $this->success($result,'添加成功');
     }
 
     public function login()
