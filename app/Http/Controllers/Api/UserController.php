@@ -13,22 +13,36 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\Dao\UserDao;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    protected $dao;
+
+    public function __construct(UserDao $userDao)
+    {
+        $this->dao = $userDao;
+    }
+
     public function index(Request $request)
     {
         $data['code'] = 0;
-        $data['items'] = $request->all() ?? [];
         $data['request'] = request()->all();
+        $result = $this->dao->list();
+        $data['items'] = $result;
 
         return response()->json($data);
     }
 
     public function register()
     {
-        echo 'register';
+        $input = request()->all();
+        $name = request()->input('name');
+
+        $result = $this->dao->save($input);
+
+        return response()->json($result);
     }
 
     public function login()
